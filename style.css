@@ -1,42 +1,123 @@
 html, body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
     box-sizing: border-box;
+    width: 100%;
 }
 
-* {
+*, *::before, *::after {
     box-sizing: inherit;
     font-family: 'Roboto', sans-serif;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
 }
 
-/* HEADER */
-#header {
+
+/* Navbar */
+nav {
+    background: #006400;
+    height: 70px;
+    padding: 0 2em;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+}
+
+nav #brand {
+    display: block;
+    float: left;
+    height: auto;
+    line-height: 70px;
+    width: 50%;
+}
+
+nav #brand a {
+    color: #fff;
+    height: 70px;
+    transition: all 0.3s ease-out;
+    width: 100%;
+}
+
+nav #brand a img {
+    height: 100%;
+    vertical-align: middle;
+    width: 100%;
+}
+
+nav #menu {
+    align-items: center;
+    background: #006400;
     display: flex;
     flex-direction: column;
-    width: 100%;
-    overflow: hidden;
-    position: fixed;
+    height: 100vh;
+    justify-content: center;
+    left: 0;
+    padding: 0 1em;
+    position: absolute;
     top: 0;
-    background-color: #006400;
+    visibility: hidden;
+    width: 100vw;
+    z-index: 1;
 }
 
-#header-img {
-    width: 60%;
-    height: auto;
-    margin: 0 0.5em;
+nav #menu li {
+    cursor: pointer;
+    line-height: 70px;
+    padding: 0 1em;
+    text-align: center;
+    text-transform: uppercase;
+    width: 100%;
 }
 
-#nav-bar {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+nav #menu li a {
+    color: #fff;
+    font-size: 1.5em;
+    height: 70px;
+    width: 100%;
 }
 
-.nav-link {
-    margin: 0.5em;
-    color: #FFF;
+nav #menu li:hover {
+    background: #679869;
 }
+
+#menu.active {
+    visibility: visible;
+}
+
+#toggle {
+    cursor: pointer;
+    float: right;
+    height: 40px;
+    opacity: 0;
+    position: absolute;
+    right: 20px;
+    top: 14px;
+    transition: all 0.3s ease-out;
+    visibility: hidden;
+    width: 40px;
+    z-index: 999;
+}
+
+#toggle .span {
+    backface-visibility: hidden;
+    background: #fff;
+    height: 7px;
+    margin: 5px auto;
+}
+
+#toggle.on #one {
+    transform: rotate(45deg) translateX(6px) translateY(6px);
+}
+
+#toggle.on #two {
+    opacity: 0;
+}
+
+#toggle.on #three {
+    transform: rotate(-45deg) translateX(10px) translateY(-12px);
+}
+
+
 
 /* MAIN SECTION */
 #main {
@@ -132,10 +213,6 @@ html, body {
     color: #000;
 }
 
-/* LINKS */
-a {
-    text-decoration: none;
-}
 
 /* BUTTONS */
 #main-button, .course-button, #submit {
@@ -169,12 +246,52 @@ footer {
     font-size: 0.875em;
 }
 
+
+
+@media (max-width: 767px) {
+    /* Navbar */
+    #toggle {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
 @media (min-width: 768px) {
-    #header-img {
-        width: 190px;
-        margin-left: 1.5em;
+    /* Navbar */
+    nav #brand {
+        height: 70px;
+        width: auto;
+    }
+    nav #brand a, nav #brand a img {
+        height: 50px;
+        width: auto;
+    }
+    nav #menu {
+        align-items: flex-end;
+        background: transparent;
+        flex-direction: row;
+        float: right;
+        height: 70px;
+        justify-content: center;
+        padding: 0;
+        position: relative;
+        right: 0;
+        visibility: visible;
+        width: auto;
+    }
+    nav #menu li {
+        display: inline-flex;
+        width: auto;
+    }
+    nav #menu li a {
+        font-size: 1em;
+    }
+    #toggle {
+        display: none;
     }
 
+
+    /* Sections */
     #main {
         padding-top: 25%;
     }
