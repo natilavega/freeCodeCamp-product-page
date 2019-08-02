@@ -13,7 +13,6 @@ html, body {
     padding: 0;
     text-decoration: none;
 }
-
 a:hover,
 a:active,
 a:focus,
@@ -30,6 +29,7 @@ button:focus {
 /* Navbar */
 nav {
     background: #006400;
+    box-shadow: 0 5px 10px rgba(0,100,0,0.25);
     height: 70px;
     padding: 0 2em;
     position: fixed;
@@ -129,7 +129,7 @@ nav #menu li:hover {
 .btn-primary {
     background: #006400;
     border: 1px solid #006400;
-    box-shadow: 0 8px 16px -5px rgba(0,100,0,0.3);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.25);
     color: #fff;
 }
 .btn-primary:hover {
@@ -137,12 +137,14 @@ nav #menu li:hover {
 }
 .btn-secondary {
     background: transparent;
-    border: 1.5px solid #006400;
-    box-shadow: 0 8px 16px 0 rgba(255,255,255,0.3);
-    color: #006400;
+    border: 1.5px solid #353536;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    color: #353536;
 }
 .btn-secondary:hover {
-    font-weight: bold;
+    border: 1px solid #353536;
+    background: #353536;
+    color: #fff;
 }
 .btn-lg {
     font-size: 16px;
@@ -155,8 +157,72 @@ nav #menu li:hover {
     padding: 4px 16px;
 }
 
+/* All Sections */
+section {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 80vh;
+    padding: 100px 1em 0 1em;
+}
+
+
+/* Courses section */
+#courses-container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+}
+.course {
+    border-radius: 5px;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.25);
+    margin: 1em;
+    text-align: center;
+    transition: all .2s ease-in-out;
+    width: 90%;
+}
+.course h3 {
+    background: 
+        radial-gradient(
+            circle at top right,
+            rgba(241,196,15,0.4),
+            #006400
+            
+        ), #006400;
+    border-radius: 5px 5px 0 0;
+    color: #fff;
+    font-size: 1.25em;
+    letter-spacing: 2px;
+    margin-bottom: 2em;
+    padding: 1em;
+    text-transform: uppercase;
+}
+.course p {
+    color: #353536;
+    line-height: 22px;
+    margin: 0 auto;
+    min-height: 66px;
+    vertical-align: center;
+    width: 75%;
+}
+.course button {
+    margin: 2em 1em 1.25em 1em;
+    width: 75%;
+}
+
+
+
+
 
 /* MAIN SECTION */
+#video {
+    margin: 1em -1em;
+}
+
 #main {
     height: 100vh;
     padding: 0 1.5em;
@@ -184,58 +250,6 @@ nav #menu li:hover {
     color: #FFF;
 }
 
-/* ALL SECTIONS */
-#how-it-works , #courses , #contact {
-    min-height: 80vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 1em;
-    padding-top: 30%;
-    text-align: center;
-}
-
-#video {
-    margin: 1em -1em;
-}
-
-/* COURSES SECTION */
-
-.course-box {
-    margin: 1em;
-    padding: 1em;
-    border-radius: 5px;
-    box-shadow: 5px 5px 10px rgba(0,0,0,0.25);
-}
-
-#course-js {
-    border-top: 12px solid #f8dc3d;
-} 
-
-#course-react {
-    border-top: 12px solid #00d8ff;
-}
-
-#course-angular {
-    border-top: 12px solid #dd0031;
-}
-
-#logo-js, #logo-react, #logo-angular {
-    font-size: 2.5em;
-}
-
-#logo-js {
-    color: #f8dc3d;
-}
-
-#logo-react {
-    color: #00d8ff;
-}
-
-#logo-angular {
-    color: #dd0031;
-}
-
 /* CONTACT SECTION */
 #contact-social {
     display: flex;
@@ -249,7 +263,6 @@ nav #menu li:hover {
     font-size: 1.5em;
     color: #000;
 }
-
 
 /* FOOTER */
 footer {
@@ -266,6 +279,7 @@ footer {
 
 
 
+/* Extra Small Devices */
 @media (max-width: 767px) {
     /* Navbar */
     #toggle {
@@ -274,6 +288,7 @@ footer {
     }
 }
 
+/* Small Devices */
 @media (min-width: 768px) {
     /* Navbar */
     nav #brand {
@@ -308,27 +323,47 @@ footer {
         display: none;
     }
 
+    /* All Sections */
+    section {
+        padding: 100px 6em 0 6em;
+    }
 
-    /* Sections */
+    /*Course Section */
+    .course {
+        width: 70%;
+    }
+
+
+
+    /* Old styles */
     #main {
         padding-top: 25%;
     }
-
-    #how-it-works , #courses , #contact {
-        padding-top: 12%;
-    }
-
-    #courses-container {
-        display: flex;
-        flex-direction: row;
-    }
-
-    .course-box {
-        width: 30%;
-    }
-
     #video {
         margin: 2em auto;
         width: 560px;
+    }
+}
+
+/* Medium Devices */
+@media (min-width: 970px) {
+    /*Course Section */
+    #courses-container {
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+    }
+    .course {
+        width: 45%;
+    }
+}
+
+/* Larger Devices */
+@media (min-width: 1170px) {
+    section {
+        padding: 100px 15em 0 15em;
     }
 }
