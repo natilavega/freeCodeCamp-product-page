@@ -3,13 +3,27 @@ html, body {
     width: 100%;
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
     box-sizing: inherit;
     font-family: 'Roboto', sans-serif;
     list-style: none;
     margin: 0;
     padding: 0;
     text-decoration: none;
+}
+
+a:hover,
+a:active,
+a:focus,
+input:hover,
+input:active,
+input:focus,
+button:hover,
+button:active,
+button:focus {
+  outline: 0;
 }
 
 
@@ -22,7 +36,6 @@ nav {
     width: 100%;
     z-index: 1;
 }
-
 nav #brand {
     display: block;
     float: left;
@@ -30,20 +43,17 @@ nav #brand {
     line-height: 70px;
     width: 50%;
 }
-
 nav #brand a {
     color: #fff;
     height: 70px;
     transition: all 0.3s ease-out;
     width: 100%;
 }
-
 nav #brand a img {
     height: 100%;
     vertical-align: middle;
     width: 100%;
 }
-
 nav #menu {
     align-items: center;
     background: #006400;
@@ -59,7 +69,6 @@ nav #menu {
     width: 100vw;
     z-index: 1;
 }
-
 nav #menu li {
     cursor: pointer;
     line-height: 70px;
@@ -68,18 +77,15 @@ nav #menu li {
     text-transform: uppercase;
     width: 100%;
 }
-
 nav #menu li a {
     color: #fff;
     font-size: 1.5em;
     height: 70px;
     width: 100%;
 }
-
 nav #menu li:hover {
     background: #679869;
 }
-
 #menu.active {
     visibility: visible;
 }
@@ -97,26 +103,57 @@ nav #menu li:hover {
     width: 40px;
     z-index: 999;
 }
-
 #toggle .span {
     backface-visibility: hidden;
     background: #fff;
     height: 7px;
     margin: 5px auto;
 }
-
 #toggle.on #one {
     transform: rotate(45deg) translateX(6px) translateY(6px);
 }
-
 #toggle.on #two {
     opacity: 0;
 }
-
 #toggle.on #three {
     transform: rotate(-45deg) translateX(10px) translateY(-12px);
 }
 
+/* Buttons */
+.btn {
+    border-radius: 5px;
+    cursor: pointer;
+    letter-spacing: 1px;
+    text-align: center;
+}
+.btn-primary {
+    background: #006400;
+    border: 1px solid #006400;
+    box-shadow: 0 8px 16px -5px rgba(0,100,0,0.3);
+    color: #fff;
+}
+.btn-primary:hover {
+    background: rgba(0,100,0,0.8);
+}
+.btn-secondary {
+    background: transparent;
+    border: 1.5px solid #006400;
+    box-shadow: 0 8px 16px 0 rgba(255,255,255,0.3);
+    color: #006400;
+}
+.btn-secondary:hover {
+    font-weight: bold;
+}
+.btn-lg {
+    font-size: 16px;
+    line-height: 24px;
+    padding: 12px 20px;
+}
+.btn-sm {
+    font-size: 14px;
+    line-height: 24px;
+    padding: 4px 16px;
+}
 
 
 /* MAIN SECTION */
@@ -213,25 +250,6 @@ nav #menu li:hover {
     color: #000;
 }
 
-
-/* BUTTONS */
-#main-button, .course-button, #submit {
-    background-color: rgba(0,100,0,0.8);
-    border: 1.5px solid #006400;
-    color: #FFF;  
-}
-
-#main-button {
-    padding: 1em;
-    font-weight: 500;
-    font-size: 1em;
-    border-radius: 10px;
-}
-
-#submit, .course-button, #email {
-    padding: 0.5em;
-    border-radius: 5px;
-}
 
 /* FOOTER */
 footer {
