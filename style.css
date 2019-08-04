@@ -178,7 +178,6 @@ header h1 {
     font-family: 'Lato', sans-serif;
     font-size: 3em;
     line-height: 1.25em;
-    text-shadow: 2px 1px 1px #679869;
 }
 header p {
     color: #fff;
@@ -200,7 +199,6 @@ section {
 section h2 {
     font-family: 'Lato', sans-serif;
 }
-
 
 /* Courses section */
 #courses-container {
@@ -248,11 +246,21 @@ section h2 {
     width: 75%;
 }
 
+/* Footer */
+footer {
+    padding: 1em;
+    background-color: #353536;
+    color: #fff;
+}
+footer div {
+    display: flex;
+    justify-content: center;
+    font-size: 0.75em;
+}
 
 
 
-
-/* MAIN SECTION */
+/* Old styles */
 #video {
     margin: 1em -1em;
 }
@@ -270,20 +278,6 @@ section h2 {
     font-size: 1.5em;
     color: #000;
 }
-
-/* FOOTER */
-footer {
-    padding: 1em;
-    background-color: #006400;
-    color: #FFF;
-}
-
-#credit {
-    display: flex;
-    justify-content: center;
-    font-size: 0.875em;
-}
-
 
 
 /* Extra Small Devices */
