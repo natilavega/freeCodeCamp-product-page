@@ -25,7 +25,6 @@ button:focus {
   outline: 0;
 }
 
-
 /* Navbar */
 nav {
     background: #006400;
@@ -150,12 +149,44 @@ nav #menu li:hover {
     font-size: 16px;
     line-height: 24px;
     padding: 12px 20px;
+    width: 100%;
 }
 .btn-sm {
     font-size: 14px;
     line-height: 24px;
     padding: 4px 16px;
 }
+
+/* Header */
+header {
+    align-items: flex-start;
+    background: 
+        linear-gradient(
+            rgba(0,0,0,0.25),
+            rgba(0,0,0,0.25)
+        ), 
+        url("img/main-background.jpg") no-repeat center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: flex-end;
+    padding: 1.5em 2.25em;
+}
+header h1 {
+    color: #fff;
+    font-family: 'Lato', sans-serif;
+    font-size: 3em;
+    line-height: 1.25em;
+    text-shadow: 2px 1px 1px #679869;
+}
+header p {
+    color: #fff;
+    font-size: 1.125em;
+    line-height: 1.2em;
+    margin: 1.5em 0;
+}
+
 
 /* All Sections */
 section {
@@ -165,6 +196,9 @@ section {
     justify-content: center;
     min-height: 80vh;
     padding: 100px 1em 0 1em;
+}
+section h2 {
+    font-family: 'Lato', sans-serif;
 }
 
 
@@ -221,33 +255,6 @@ section {
 /* MAIN SECTION */
 #video {
     margin: 1em -1em;
-}
-
-#main {
-    height: 100vh;
-    padding: 0 1.5em;
-    padding-top: 40%;
-    background: linear-gradient(rgba(0,0,0,0.25),rgba(0,0,0,0.25)), 
-        url("img/main-background.jpg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-#main-title {
-    font-size: 3.25em;
-    font-family: 'Lato', sans-serif;
-    color: #FFF;
-}
-
-#main-title , .section-title {
-    font-family: 'Lato', sans-serif;
-}
-
-#main-text {
-    margin-bottom: 1.5em;
-    font-size: 1.5em;
-    color: #FFF;
 }
 
 /* CONTACT SECTION */
@@ -323,6 +330,18 @@ footer {
         display: none;
     }
 
+    /* Header */
+    header {
+        justify-content: center;
+    }
+    header h1 {
+        font-size: 3.5em;
+        width: 50%;
+    }
+    header .btn-lg {
+        width: 40%;
+    }
+
     /* All Sections */
     section {
         padding: 100px 6em 0 6em;
@@ -336,9 +355,6 @@ footer {
 
 
     /* Old styles */
-    #main {
-        padding-top: 25%;
-    }
     #video {
         margin: 2em auto;
         width: 560px;
@@ -347,6 +363,11 @@ footer {
 
 /* Medium Devices */
 @media (min-width: 970px) {
+    /*Header */
+    header .btn-lg {
+        width: 30%;
+    }
+
     /*Course Section */
     #courses-container {
         align-items: center;
@@ -363,6 +384,12 @@ footer {
 
 /* Larger Devices */
 @media (min-width: 1170px) {
+    /*Header */
+    header .btn-lg {
+        width: 25%;
+    }
+
+    /* All Sections */
     section {
         padding: 100px 15em 0 15em;
     }
