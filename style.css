@@ -19,6 +19,9 @@ a:focus,
 input:hover,
 input:active,
 input:focus,
+textarea:hover,
+textarea:active,
+textarea:focus,
 button:hover,
 button:active,
 button:focus {
@@ -186,7 +189,6 @@ header p {
     margin: 1.5em 0;
 }
 
-
 /* All Sections */
 section {
     align-items: center;
@@ -219,7 +221,7 @@ section h2::before {
     z-index: -1;
 }
 
-/* Courses section */
+/* Course Section */
 #courses-container {
     align-items: center;
     display: flex;
@@ -265,6 +267,46 @@ section h2::before {
     width: 75%;
 }
 
+/* Contact Section */
+.wrapper {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 90%;
+}
+form textarea, form #email {
+    border-radius: 5px;
+    border: 1px solid #353536;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    line-height: 22px;
+    padding: 10px;
+}
+form textarea {
+    margin: 22px 0;
+}
+.wrapper div {
+    padding: 2em 0;
+}
+.wrapper div a {
+    height: 25px;
+    margin: 0 0.25em;
+    width: 25px;
+}
+.wrapper div a img {
+    height: 25px;
+    width: 25px;
+}
+.wrapper div a:hover img {
+    transform: scale(1.1);
+}
+
 /* Footer */
 footer {
     padding: 1em;
@@ -284,19 +326,6 @@ footer div {
     margin: 1em -1em;
 }
 
-/* CONTACT SECTION */
-#contact-social {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin: 1em;
-}
-
-.contact-link {
-    padding: 0.25em;
-    font-size: 1.5em;
-    color: #000;
-}
 
 
 /* Extra Small Devices */
@@ -360,11 +389,28 @@ footer div {
         padding: 100px 6em 0 6em;
     }
 
-    /*Course Section */
+    /* Course Section */
     .course {
         width: 70%;
     }
 
+    /* Contact Section */
+    .wrapper {
+        align-items: flex-start;
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: flex-end;
+        margin-bottom: 100px;
+    }
+    .wrapper div {
+        padding: 0 3em;
+        text-align: right;
+        width: 40%;
+    }
+    .wrapper form {
+        padding-right: 2em;
+        width: 55%;
+    }
 
 
     /* Old styles */
@@ -376,12 +422,12 @@ footer div {
 
 /* Medium Devices */
 @media (min-width: 970px) {
-    /*Header */
+    /* Header */
     header .btn-lg {
         width: 30%;
     }
 
-    /*Course Section */
+    /* Course Section */
     #courses-container {
         align-items: center;
         display: flex;
@@ -390,14 +436,26 @@ footer div {
         justify-content: center;
         width: 100%;
     }
-    .course {
+    .course, form {
         width: 45%;
+    }
+
+    /* Contact Section */
+    .wrapper div a {
+        padding: 0 0.5em;
+    }
+    .wrapper div a img {
+        height: 30px;
+        width: 30px;
+    }
+    form .btn {
+        width: 40%;
     }
 }
 
 /* Larger Devices */
 @media (min-width: 1170px) {
-    /*Header */
+    /* Header */
     header .btn-lg {
         width: 25%;
     }
