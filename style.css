@@ -221,6 +221,35 @@ section h2::before {
     z-index: -1;
 }
 
+/* How-it-works Section */
+ul {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+ul li {
+    padding: 2em;
+    text-align: center;
+}
+ul li div {
+    background: #679869;
+    border-radius: 50%;
+    margin: 1.5em auto;
+    width: 50%;
+}
+ul li div img {
+    width: 100%;
+}
+ul li h4 {
+    font-size: 1.25em;
+    font-weight: 400;
+    line-height: 1.5;
+}
+ul li h4 span {
+    font-weight: 700;
+}
+
 /* Course Section */
 #courses-container {
     align-items: center;
@@ -242,7 +271,7 @@ section h2::before {
     background: 
         radial-gradient(
             circle at top right,
-            rgba(241,196,15,0.4),
+            rgba(103,152,105,0.8),
             #006400
             
         ), #006400;
@@ -274,6 +303,7 @@ section h2::before {
     flex-direction: column;
     justify-content: center;
     width: 100%;
+    padding-top: 2em;
 }
 form {
     display: flex;
@@ -318,14 +348,6 @@ footer div {
     justify-content: center;
     font-size: 0.75em;
 }
-
-
-
-/* Old styles */
-#video {
-    margin: 1em -1em;
-}
-
 
 
 /* Extra Small Devices */
@@ -389,6 +411,15 @@ footer div {
         padding: 100px 6em 0 6em;
     }
 
+    /* How-it-works Section */
+    ul {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    ul li {
+        width: 50%;
+    }
+
     /* Course Section */
     .course {
         width: 70%;
@@ -411,13 +442,6 @@ footer div {
         padding-right: 2em;
         width: 55%;
     }
-
-
-    /* Old styles */
-    #video {
-        margin: 2em auto;
-        width: 560px;
-    }
 }
 
 /* Medium Devices */
@@ -425,6 +449,11 @@ footer div {
     /* Header */
     header .btn-lg {
         width: 30%;
+    }
+
+    /* How-it-works Section */
+    ul li {
+        width: 33%;
     }
 
     /* Course Section */
